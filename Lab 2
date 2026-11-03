@@ -1,0 +1,36 @@
+import math
+
+print("--- Завдання 1 ---")
+a = float(input("Введіть початок проміжку (a): "))
+b = float(input("Введіть кінець проміжку (b): "))
+h = float(input("Введіть крок (h): "))
+
+print(f"\n{'x':<10} | {'y':<10}")
+print("-" * 23)
+
+x = a
+sum_y = 0.0
+
+while x <= b + 1e-9:
+    try:
+        y = 2 * math.tan(x / 2) + 1
+        print(f"{x:<10.4f} | {y:<10.4f}")
+        if 0 < y < 2:
+            sum_y += y
+            
+    except ValueError:
+        print(f"{x:<10.4f} | {'Помилка (не визначено)'}")
+
+    x += h
+
+print(f"\nСума значень функції y, для яких 0 < y < 2, дорівнює: {sum_y:.4f}\n")
+
+
+print("--- Завдання 2 ---")
+n = int(input("Введіть натуральне число n: "))
+
+P = 1
+for i in range(1, n + 1):
+    P *= (2 * i)
+
+print(f"Добуток P для n = {n} дорівнює: {P}")
