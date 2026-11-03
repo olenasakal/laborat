@@ -1,0 +1,28 @@
+import math
+
+
+print("--- Завдання 1 ---")
+x = float(input("Введіть число x: "))
+y = float(input("Введіть число y: "))
+
+pivsum = (x + y) / 2
+double = 2 * x * y
+
+if x < y:
+    x = pivsum
+    y = double
+else:
+    y = pivsum
+    x = double
+
+print(f"Після зміни: x = {x}, y = {y}\n")
+
+print("--- Завдання 2 ---")
+x_val = float(input("Введіть значення x для функції F(x): "))
+
+if x_val <= 0.5:
+    result = math.cos(2 * x_val - 1) + 2
+else:
+    result = math.sin(x_val) * math.cos(2 * x_val)
+
+print(f"Значення функції F({x_val}) дорівнює: {result}")
